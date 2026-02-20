@@ -1,0 +1,29 @@
+---
+import Container from "@/components/container.astro";
+import Hero from "@/components/hero.astro";
+import Problems from "@/components/problems.astro";
+import Solution from "@/components/solution.astro";
+import HowItWorks from "@/components/howitworks.astro";
+import PricingSection from "@/components/pricingsection.astro";
+import Faq from "@/components/faq.astro";
+import FinalCta from "@/components/finalcta.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="">
+  <Container>
+    <Hero />
+  </Container>
+  <Problems />
+  <Container>
+    <Solution />
+  </Container>
+  <HowItWorks />
+  <Container>
+    <PricingSection />
+  </Container>
+  <Faq />
+  <Container>
+    <FinalCta />
+  </Container>
+</Layout>

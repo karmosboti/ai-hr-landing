@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+
+const problems = [
+  {
+    icon: "😓",
+    title: "Minden CV-t te olvassz végig",
+    points: [
+      "Heti 20-50 jelentkező ⟶ 5-10 óra szűrés",
+      "Közben a tényleges munkád várakozik"
+    ]
+  },
+  {
+    icon: "📧",
+    title: "Emailek elvesznek, jelöltek kimaradnak",
+    points: [
+      "Lemarad a \"talán\" kupac",
+      "Visszajelzést kérnek, de nincs időd válaszolni",
+      "Jó jelöltek elmennek mert nem hallanak tőled"
+    ]
+  },
+  {
+    icon: "📅",
+    title: "Interjú-időpont ping-pong",
+    points: [
+      "15 email hogy találjatok közös időt",
+      "Megint nem jelent meg → újra kezded"
+    ]
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-slate-50" id="problema">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+        Ismerős?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {problems.map((problem) => (
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+          <div class="text-5xl mb-4">{problem.icon}</div>
+          <h3 class="text-xl font-bold mb-4 text-slate-800">{problem.title}</h3>
+          <ul class="space-y-2">
+            {problem.points.map((point) => (
+              <li class="text-slate-600 flex items-start gap-2">
+                <span class="text-red-500 mt-1">•</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-xl md:text-2xl mt-12 text-slate-700 font-medium">
+      Mit érnél el, ha ezt valaki (vagy inkább <span class="text-green-600">valami</span>) leveszi a válladról?
+    </p>
+  </div>
+</section>

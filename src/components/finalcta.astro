@@ -1,0 +1,32 @@
+---
+import Link from "./ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="py-16 md:py-24" id="konzultacio">
+  <div class="max-w-4xl mx-auto px-5">
+    <div
+      class="bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:px-16 md:py-16 rounded-3xl flex flex-col items-center text-center">
+      <h2 class="text-white text-4xl md:text-5xl font-bold tracking-tight">
+        Próbáld ki 0 kockázattal.
+      </h2>
+      <p class="text-slate-300 mt-6 text-lg md:text-xl max-w-2xl">
+        Foglalj egy 30 perces ingyenes konzultációt.
+        <br />
+        Megmutatjuk az agented működését élőben, és kiszámoljuk mennyit takarítanál meg.
+      </p>
+      <div class="flex mt-8">
+        <Link 
+          href="#" 
+          style="inverted"
+          class="!bg-green-500 hover:!bg-green-600 !text-white flex items-center gap-2 !px-8 !py-4 text-lg font-semibold">
+          <Icon class="w-6 h-6" name="bx:bx-calendar" />
+          Ingyenes Konzultáció Foglalása
+        </Link>
+      </div>
+      <p class="text-slate-400 mt-4 text-sm">
+        Nincs kötelezettség. Nincs költség. Csak beszélgetünk.
+      </p>
+    </div>
+  </div>
+</section>

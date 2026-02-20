@@ -1,0 +1,67 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "AI HR Agent"
+  : "AI HR Agent — Automatizáld a Toborzást | KKV-knak";
+---
+
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <SEO
+      title={makeTitle}
+      description="KKV-knak AI-alapú HR munkatárs. CV szűrés, interjú időpontok, jelölt-követés — 24/7. Automatizáld a toborzás repetitív részeit."
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@aihr_agent",
+        site: "@aihr_agent",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `AI HR Agent — Automatizáld a Toborzást`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "AI HR Agent - Toborzás Automatizálás",
+        },
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>

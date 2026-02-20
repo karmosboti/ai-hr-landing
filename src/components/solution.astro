@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "@/components/ui/link.astro";
+
+const features = [
+  {
+    icon: "bx:bx-filter-alt",
+    title: "CV szűrés és shortlist készítés",
+    points: [
+      "Beolvassa a jelentkezéseket (email/LinkedIn/álláshirdetés)",
+      "Kiértékeli a tapasztalat/skill matchet a brief alapján",
+      "Automatikusan shortlistet készít: \"TOP jelöltek / Talán / Nem releváns\""
+    ]
+  },
+  {
+    icon: "bx:bx-mail-send",
+    title: "Automatikus visszajelzések",
+    points: [
+      "Minden jelölt kap választ 24 órán belül",
+      "Személyre szabott elutasító email (nem sablon!)",
+      "Sikeres jelölteknek következő lépés info"
+    ]
+  },
+  {
+    icon: "bx:bx-chat",
+    title: "Előszűrő interjú chatben",
+    points: [
+      "Az AI rákérdez a kulcskérdésekre",
+      "Te kapod az összefoglalót: \"Mi motiválja? Mikor tud kezdeni? Fizetési elvárás?\""
+    ]
+  },
+  {
+    icon: "bx:bx-calendar-check",
+    title: "Interjú időpont foglalás",
+    points: [
+      "Naptár integráció (Google Calendar)",
+      "AI egyezteti az időpontokat a jelöltekkel",
+      "Te csak megjelensz az interjún"
+    ]
+  },
+  {
+    icon: "bx:bx-bar-chart-alt-2",
+    title: "Heti riport",
+    points: [
+      "\"Ez a hét: 23 jelentkező, 4 TOP jelölt, 2 interjú lezajlott\"",
+      "Tracking: honnan jönnek a legjobb jelöltek?"
+    ]
+  }
+];
+---
+
+<section class="py-16 md:py-24" id="megoldas">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+        Bemutatkozik: az <span class="text-green-600">AI HR Munkatársad</span>
+      </h2>
+      <p class="text-lg mt-4 text-slate-600">
+        Amit az AI agent csinál helyetted
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <div class="p-6 rounded-xl border border-slate-200 hover:border-green-300 hover:shadow-lg transition-all">
+          <div class="bg-green-100 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+            <Icon class="text-green-600 w-6 h-6" name={feature.icon} />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-slate-800">✅ {feature.title}</h3>
+          <ul class="space-y-2">
+            {feature.points.map((point) => (
+              <li class="text-slate-600 text-sm flex items-start gap-2">
+                <span class="text-green-500 mt-0.5">•</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <Link
+        href="#konzultacio"
+        class="inline-flex gap-2 items-center justify-center !bg-green-600 hover:!bg-green-700 !border-green-600"
+        size="lg">
+        <Icon class="text-white w-5 h-5" name="bx:bx-play" />
+        Kérd az ingyenes demo-t
+      </Link>
+      <p class="text-slate-500 mt-3">Megmutatjuk az agented működés közben.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import Link from "@/components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<main class="grid lg:grid-cols-1 place-items-center pt-16 pb-8 md:pt-20 md:pb-24">
+  <div class="text-center max-w-4xl mx-auto">
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Toborzol, de nincs időd rá?
+      <span class="text-green-600">Az AI HR Munkatársad átvállalja.</span>
+    </h1>
+    <p class="text-lg md:text-xl mt-6 text-slate-600 max-w-3xl mx-auto">
+      Automatizáld a CV szűrést, az előszűrő interjúkat és a jelölt-követést.
+      <br class="hidden md:block" />
+      Dedikált AI agent, ami érti a magyar munkaerőpiacot.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <Link
+        href="#konzultacio"
+        class="flex gap-2 items-center justify-center !bg-green-600 hover:!bg-green-700 !border-green-600"
+        size="lg">
+        <Icon class="text-white w-5 h-5" name="bx:bx-calendar" />
+        Ingyenes Konzultáció Foglalás
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        href="#hogyan-mukodik"
+        class="flex gap-2 items-center justify-center">
+        <Icon class="text-black w-5 h-5" name="bx:bx-play-circle" />
+        Nézd meg működés közben
+      </Link>
+    </div>
+  </div>
+</main>

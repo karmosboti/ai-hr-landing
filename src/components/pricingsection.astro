@@ -1,0 +1,122 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "@/components/ui/link.astro";
+import { Tick } from "@/components/ui/icons";
+
+const plans = [
+  {
+    name: "STARTER",
+    emoji: "📦",
+    subtitle: "Egy pozícióra",
+    setup: "400,000 Ft",
+    monthly: "180,000 Ft/hó",
+    popular: false,
+    features: [
+      "1 toborzási pozíció kezelése",
+      "CV szűrés + shortlist",
+      "Automatikus email válaszok",
+      "Előszűrő chat interjú",
+      "Interjú időpont foglalás",
+      "Heti riport"
+    ],
+    limit: "Max. 50 jelentkező/hó"
+  },
+  {
+    name: "PRO",
+    emoji: "🚀",
+    subtitle: "Több pozíció + testreszabás",
+    setup: "700,000 Ft",
+    monthly: "350,000 Ft/hó",
+    popular: true,
+    features: [
+      "Minden STARTER funkció +",
+      "3 pozíció egyidejű kezelése",
+      "LinkedIn integráció (auto-sourcing)",
+      "ATS integráció (ha van meglévő rendszer)",
+      "Onboarding automatizálás",
+      "Prioritás support"
+    ],
+    limit: "Max. 150 jelentkező/hó"
+  }
+];
+---
+
+<section class="py-16 md:py-24" id="arak">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+        Mennyibe kerül?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {plans.map((plan) => (
+        <div class={`relative p-8 rounded-2xl border-2 ${plan.popular ? 'border-green-500 shadow-xl' : 'border-slate-200'}`}>
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+              Legnépszerűbb
+            </div>
+          )}
+          
+          <div class="text-center mb-6">
+            <div class="text-4xl mb-2">{plan.emoji}</div>
+            <h3 class="text-2xl font-bold text-slate-800">{plan.name}</h3>
+            <p class="text-slate-500">{plan.subtitle}</p>
+          </div>
+          
+          <div class="text-center mb-6 pb-6 border-b border-slate-200">
+            <p class="text-sm text-slate-500 mb-1">Setup díj</p>
+            <p class="text-2xl font-bold text-slate-800">{plan.setup}</p>
+            <p class="text-sm text-slate-500 mt-3 mb-1">Havidíj</p>
+            <p class="text-3xl font-bold text-green-600">{plan.monthly}</p>
+          </div>
+          
+          <ul class="space-y-3 mb-6">
+            {plan.features.map((feature) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <Tick class="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          
+          <div class="bg-slate-100 text-slate-600 text-sm px-4 py-2 rounded-lg text-center mb-6">
+            {plan.limit}
+          </div>
+          
+          <Link
+            href="#konzultacio"
+            block
+            class={plan.popular ? "!bg-green-600 hover:!bg-green-700 !border-green-600" : ""}
+            style={plan.popular ? "primary" : "outline"}>
+            Konzultáció Foglalás
+          </Link>
+        </div>
+      ))}
+    </div>
+
+    <!-- ROI Box -->
+    <div class="mt-12 bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-200 max-w-3xl mx-auto">
+      <div class="flex items-start gap-4">
+        <div class="text-4xl">💡</div>
+        <div>
+          <h4 class="text-xl font-bold text-slate-800 mb-3">Mennyit ér az időd?</h4>
+          <div class="space-y-2 text-slate-600">
+            <p>Ha egy HR-es bért fizetnél (nettó 400K/hó) → <strong>évente 4,8M Ft</strong></p>
+            <p>AI agent: évente <strong>~2,5M Ft</strong> (setup + 12 hó retainer)</p>
+            <p class="text-green-700 font-bold text-lg">Megtakarítás: ~2,3M Ft/év + te is jobban fókuszálhatsz az üzletre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <Link
+        href="#konzultacio"
+        class="inline-flex gap-2 items-center justify-center !bg-green-600 hover:!bg-green-700 !border-green-600"
+        size="lg">
+        Ingyenes Konzultáció — Kiszámoljuk az egyedi ROI-dat
+      </Link>
+    </div>
+  </div>
+</section>
