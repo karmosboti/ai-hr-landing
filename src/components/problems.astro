@@ -1,62 +1,71 @@
 ---
-import { Icon } from "astro-icon/components";
-
-const problems = [
-  {
-    icon: "😓",
-    title: "Minden CV-t te olvassz végig",
-    points: [
-      "Heti 20-50 jelentkező ⟶ 5-10 óra szűrés",
-      "Közben a tényleges munkád várakozik"
-    ]
-  },
-  {
-    icon: "📧",
-    title: "Emailek elvesznek, jelöltek kimaradnak",
-    points: [
-      "Lemarad a \"talán\" kupac",
-      "Visszajelzést kérnek, de nincs időd válaszolni",
-      "Jó jelöltek elmennek mert nem hallanak tőled"
-    ]
-  },
-  {
-    icon: "📅",
-    title: "Interjú-időpont ping-pong",
-    points: [
-      "15 email hogy találjatok közös időt",
-      "Megint nem jelent meg → újra kezded"
-    ]
-  }
-];
 ---
 
-<section class="py-16 md:py-24 bg-slate-50" id="problema">
+<section class="py-20 md:py-28 bg-[var(--color-ink-950)]" id="gond">
   <div class="max-w-6xl mx-auto px-5">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-        Ismerős?
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      {problems.map((problem) => (
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-          <div class="text-5xl mb-4">{problem.icon}</div>
-          <h3 class="text-xl font-bold mb-4 text-slate-800">{problem.title}</h3>
-          <ul class="space-y-2">
-            {problem.points.map((point) => (
-              <li class="text-slate-600 flex items-start gap-2">
-                <span class="text-red-500 mt-1">•</span>
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
+    <div class="grid lg:grid-cols-12 gap-12">
+      <!-- Left: Section header -->
+      <div class="lg:col-span-4">
+        <p class="section-label text-[var(--color-brand-400)] mb-4">A valóság</p>
+        <h2 class="text-3xl md:text-4xl text-white leading-tight">
+          A toborzás nem nehéz.<br/>
+          <span class="text-[var(--color-ink-400)]">Csak időrabló.</span>
+        </h2>
+      </div>
+      
+      <!-- Right: Problem cards -->
+      <div class="lg:col-span-8 space-y-6">
+        <div class="bg-[var(--color-ink-900)] p-6 md:p-8 rounded-xl border border-[var(--color-ink-800)]">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-[var(--color-ink-800)] flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-[var(--color-brand-400)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-2">Heti 40 CV, mind neked szól</h3>
+              <p class="text-[var(--color-ink-400)] leading-relaxed">
+                Mindegyiket végigolvasod, pedig a felét már az első sorból kiszúrod. 
+                De hátha a 38. lesz a nyerő, ugye? Közben a saját munkád csúszik.
+              </p>
+            </div>
+          </div>
         </div>
-      ))}
+        
+        <div class="bg-[var(--color-ink-900)] p-6 md:p-8 rounded-xl border border-[var(--color-ink-800)]">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-[var(--color-ink-800)] flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-[var(--color-brand-400)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-2">Az email-kupac nő, a jelöltek mennek</h3>
+              <p class="text-[var(--color-ink-400)] leading-relaxed">
+                Írnál vissza mindenkinek, de ki ér rá? A jó jelöltek meg közben máshová mennek, 
+                mert három napja nem hallottak tőled.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-[var(--color-ink-900)] p-6 md:p-8 rounded-xl border border-[var(--color-ink-800)]">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-[var(--color-ink-800)] flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-[var(--color-brand-400)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-2">"Szerda délután jó?" — nyolcadszor</h3>
+              <p class="text-[var(--color-ink-400)] leading-relaxed">
+                Interjú időpont egyeztetés. Oda-vissza emailek, 
+                aztán mégsem jön el. Kezded elölről.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <p class="text-center text-xl md:text-2xl mt-12 text-slate-700 font-medium">
-      Mit érnél el, ha ezt valaki (vagy inkább <span class="text-green-600">valami</span>) leveszi a válladról?
-    </p>
   </div>
 </section>

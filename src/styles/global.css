@@ -3,26 +3,126 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans:
-    Bricolage Grotesque Variable, Inter Variable, Inter, ui-sans-serif,
-    system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: "DM Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, serif;
+  
+  /* Brand colors - warm, distinctive */
+  --color-brand-50: #fef7f4;
+  --color-brand-100: #fdeee6;
+  --color-brand-200: #fad9c7;
+  --color-brand-300: #f5bb9a;
+  --color-brand-400: #ed8f5a;
+  --color-brand-500: #e06d2e;
+  --color-brand-600: #d15420;
+  --color-brand-700: #ae411a;
+  --color-brand-800: #8c371c;
+  --color-brand-900: #72301b;
+  
+  /* Charcoal for text */
+  --color-ink-50: #f6f6f6;
+  --color-ink-100: #e7e7e7;
+  --color-ink-200: #d1d1d1;
+  --color-ink-300: #b0b0b0;
+  --color-ink-400: #888888;
+  --color-ink-500: #6d6d6d;
+  --color-ink-600: #5d5d5d;
+  --color-ink-700: #4f4f4f;
+  --color-ink-800: #454545;
+  --color-ink-900: #262626;
+  --color-ink-950: #171717;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-ink-200, currentColor);
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink-900);
+    background-color: var(--color-brand-50);
+    font-feature-settings: "ss01", "ss02";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  
+  ::selection {
+    background-color: var(--color-brand-200);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-brand-600);
+    color: white;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-brand-700);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-ink-900);
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    border: 2px solid var(--color-ink-200);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-secondary:hover {
+    border-color: var(--color-ink-900);
+    background-color: var(--color-ink-900);
+    color: white;
+  }
+  
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-brand-600);
+  }
+  
+  .accent-bar {
+    width: 3rem;
+    height: 4px;
+    background-color: var(--color-brand-500);
+    border-radius: 2px;
+  }
+}
+
+/* Noise texture overlay */
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
 }

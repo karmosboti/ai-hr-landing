@@ -1,87 +1,61 @@
 ---
-import { Icon } from "astro-icon/components";
-
-const steps = [
-  {
-    number: "1",
-    emoji: "1️⃣",
-    title: "Brief + Beállítás",
-    duration: "1 hét",
-    points: [
-      "Konzultáció: milyen pozícióra toborozol, mik a követelmények",
-      "Mi felépítjük az AI agentedet, integrálunk minden szükséges rendszerbe",
-      "Tesztelés: próbajelöltekkel finom-hangoljuk"
-    ]
-  },
-  {
-    number: "2",
-    emoji: "2️⃣",
-    title: "Az agent munkába áll",
-    duration: "",
-    points: [
-      "Jelöltek jelentkeznek (email/webform/LinkedIn)",
-      "Az AI kezeli: szűrés, visszajelzés, előszűrő, időpont foglalás",
-      "Te kapod a shortlistet és az összefoglalókat"
-    ]
-  },
-  {
-    number: "3",
-    emoji: "3️⃣",
-    title: "Te csak az interjúzással foglalkozol",
-    duration: "",
-    points: [
-      "Hetente 1x megnézed a TOP jelölteket",
-      "Interjúzol (vagy nem)",
-      "Döntesz"
-    ]
-  }
-];
 ---
 
-<section class="py-16 md:py-24 bg-slate-50" id="hogyan-mukodik">
-  <div class="max-w-5xl mx-auto px-5">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-        Hogyan működik?
+<section class="py-20 md:py-28 bg-white" id="hogyan">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <p class="section-label mb-4">A folyamat</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl text-[var(--color-ink-950)]">
+        Egy hét, és megy
       </h2>
-      <p class="text-lg mt-4 text-slate-600">
-        3 egyszerű lépés
-      </p>
     </div>
-
-    <div class="space-y-8">
-      {steps.map((step, index) => (
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex flex-col md:flex-row gap-6 items-start">
-          <div class="bg-green-600 text-white text-3xl font-bold rounded-full w-16 h-16 flex items-center justify-center shrink-0">
-            {step.number}
-          </div>
-          <div class="flex-1">
-            <div class="flex items-center gap-3 mb-3">
-              <h3 class="text-2xl font-bold text-slate-800">{step.title}</h3>
-              {step.duration && (
-                <span class="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full font-medium">
-                  {step.duration}
-                </span>
-              )}
+    
+    <div class="relative">
+      <!-- Connection line (desktop) -->
+      <div class="hidden lg:block absolute top-24 left-[16.67%] right-[16.67%] h-0.5 bg-[var(--color-ink-200)]"></div>
+      
+      <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div class="lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-brand-600)] text-white flex items-center justify-center text-xl font-semibold mb-6 lg:mx-auto relative z-10">
+              1
             </div>
-            <ul class="space-y-2">
-              {step.points.map((point) => (
-                <li class="text-slate-600 flex items-start gap-2">
-                  <span class="text-green-500 mt-1">→</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
+            <h3 class="text-xl font-semibold text-[var(--color-ink-900)] mb-3">Beszélgetünk</h3>
+            <p class="text-[var(--color-ink-600)]">
+              Fél óra. Elmondod, milyen pozícióra keresel embert, 
+              mik a követelmények, milyen rendszereket használsz.
+            </p>
           </div>
         </div>
-      ))}
-    </div>
-
-    <div class="mt-12 text-center">
-      <div class="inline-block bg-green-100 text-green-800 px-6 py-4 rounded-xl">
-        <p class="text-xl font-bold">
-          ⏱️ Időmegtakarítás: <span class="text-green-600">10-15 óra/hét → 1-2 óra/hét</span>
-        </p>
+        
+        <!-- Step 2 -->
+        <div class="relative">
+          <div class="lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-brand-600)] text-white flex items-center justify-center text-xl font-semibold mb-6 lg:mx-auto relative z-10">
+              2
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--color-ink-900)] mb-3">Mi felépítjük</h3>
+            <p class="text-[var(--color-ink-600)]">
+              Kb. 5 munkanap. Bekötjük az emailedet, a naptáradat, 
+              beállítjuk a szűrési kritériumokat. Teszteljük.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="relative">
+          <div class="lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-brand-600)] text-white flex items-center justify-center text-xl font-semibold mb-6 lg:mx-auto relative z-10">
+              3
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--color-ink-900)] mb-3">Megy magától</h3>
+            <p class="text-[var(--color-ink-600)]">
+              Jönnek a jelentkezők, az agent dolgozik. 
+              Te heti egyszer átnézed a shortlistet, döntesz.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

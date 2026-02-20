@@ -1,32 +1,39 @@
 ---
-import Link from "./ui/link.astro";
-import { Icon } from "astro-icon/components";
 ---
 
-<section class="py-16 md:py-24" id="konzultacio">
+<section class="py-20 md:py-28" id="beszeljunk">
   <div class="max-w-4xl mx-auto px-5">
-    <div
-      class="bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:px-16 md:py-16 rounded-3xl flex flex-col items-center text-center">
-      <h2 class="text-white text-4xl md:text-5xl font-bold tracking-tight">
-        Próbáld ki 0 kockázattal.
-      </h2>
-      <p class="text-slate-300 mt-6 text-lg md:text-xl max-w-2xl">
-        Foglalj egy 30 perces ingyenes konzultációt.
-        <br />
-        Megmutatjuk az agented működését élőben, és kiszámoljuk mennyit takarítanál meg.
-      </p>
-      <div class="flex mt-8">
-        <Link 
-          href="#" 
-          style="inverted"
-          class="!bg-green-500 hover:!bg-green-600 !text-white flex items-center gap-2 !px-8 !py-4 text-lg font-semibold">
-          <Icon class="w-6 h-6" name="bx:bx-calendar" />
-          Ingyenes Konzultáció Foglalása
-        </Link>
+    <div class="bg-[var(--color-ink-950)] p-8 md:p-12 lg:p-16 rounded-3xl relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-[var(--color-brand-600)] opacity-10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-[var(--color-brand-500)] opacity-10 rounded-full blur-3xl"></div>
+      
+      <div class="relative z-10 max-w-2xl">
+        <div class="accent-bar mb-8 !bg-[var(--color-brand-500)]"></div>
+        
+        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
+          Beszéljünk fél órát
+        </h2>
+        
+        <p class="mt-6 text-lg md:text-xl text-[var(--color-ink-400)] leading-relaxed">
+          Megnézzük, mennyit takarítanál meg, megmutatjuk az agentet működés közben. 
+          Ha nem érdekel utána, semmi gond.
+        </p>
+        
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="https://calendly.com" target="_blank" rel="noopener" 
+             class="btn-primary !bg-[var(--color-brand-500)] hover:!bg-[var(--color-brand-600)]">
+            Foglalok időpontot
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </a>
+        </div>
+        
+        <p class="mt-6 text-sm text-[var(--color-ink-500)]">
+          30 perc, online, nem kötelez semmire.
+        </p>
       </div>
-      <p class="text-slate-400 mt-4 text-sm">
-        Nincs kötelezettség. Nincs költség. Csak beszélgetünk.
-      </p>
     </div>
   </div>
 </section>

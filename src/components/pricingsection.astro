@@ -1,122 +1,155 @@
 ---
-import { Icon } from "astro-icon/components";
-import Link from "@/components/ui/link.astro";
-import { Tick } from "@/components/ui/icons";
-
-const plans = [
-  {
-    name: "STARTER",
-    emoji: "📦",
-    subtitle: "Egy pozícióra",
-    setup: "400,000 Ft",
-    monthly: "180,000 Ft/hó",
-    popular: false,
-    features: [
-      "1 toborzási pozíció kezelése",
-      "CV szűrés + shortlist",
-      "Automatikus email válaszok",
-      "Előszűrő chat interjú",
-      "Interjú időpont foglalás",
-      "Heti riport"
-    ],
-    limit: "Max. 50 jelentkező/hó"
-  },
-  {
-    name: "PRO",
-    emoji: "🚀",
-    subtitle: "Több pozíció + testreszabás",
-    setup: "700,000 Ft",
-    monthly: "350,000 Ft/hó",
-    popular: true,
-    features: [
-      "Minden STARTER funkció +",
-      "3 pozíció egyidejű kezelése",
-      "LinkedIn integráció (auto-sourcing)",
-      "ATS integráció (ha van meglévő rendszer)",
-      "Onboarding automatizálás",
-      "Prioritás support"
-    ],
-    limit: "Max. 150 jelentkező/hó"
-  }
-];
 ---
 
-<section class="py-16 md:py-24" id="arak">
+<section class="py-20 md:py-28" id="arak">
   <div class="max-w-5xl mx-auto px-5">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-        Mennyibe kerül?
+    <div class="max-w-2xl mb-16">
+      <p class="section-label mb-4">Árak</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl text-[var(--color-ink-950)] leading-tight">
+        Mennyibe kerül
       </h2>
+      <p class="mt-6 text-lg text-[var(--color-ink-600)]">
+        Setup díj egyszer, havidíj utána. Ha nem tetszik, az első hónapban kiléphetsz.
+      </p>
     </div>
-
-    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      {plans.map((plan) => (
-        <div class={`relative p-8 rounded-2xl border-2 ${plan.popular ? 'border-green-500 shadow-xl' : 'border-slate-200'}`}>
-          {plan.popular && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-4 py-1 rounded-full text-sm font-medium">
-              Legnépszerűbb
-            </div>
-          )}
-          
-          <div class="text-center mb-6">
-            <div class="text-4xl mb-2">{plan.emoji}</div>
-            <h3 class="text-2xl font-bold text-slate-800">{plan.name}</h3>
-            <p class="text-slate-500">{plan.subtitle}</p>
-          </div>
-          
-          <div class="text-center mb-6 pb-6 border-b border-slate-200">
-            <p class="text-sm text-slate-500 mb-1">Setup díj</p>
-            <p class="text-2xl font-bold text-slate-800">{plan.setup}</p>
-            <p class="text-sm text-slate-500 mt-3 mb-1">Havidíj</p>
-            <p class="text-3xl font-bold text-green-600">{plan.monthly}</p>
-          </div>
-          
-          <ul class="space-y-3 mb-6">
-            {plan.features.map((feature) => (
-              <li class="flex items-start gap-3 text-slate-700">
-                <Tick class="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          
-          <div class="bg-slate-100 text-slate-600 text-sm px-4 py-2 rounded-lg text-center mb-6">
-            {plan.limit}
-          </div>
-          
-          <Link
-            href="#konzultacio"
-            block
-            class={plan.popular ? "!bg-green-600 hover:!bg-green-700 !border-green-600" : ""}
-            style={plan.popular ? "primary" : "outline"}>
-            Konzultáció Foglalás
-          </Link>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Starter -->
+      <div class="bg-white p-8 rounded-2xl border border-[var(--color-ink-200)]">
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold text-[var(--color-ink-900)]">Starter</h3>
+          <p class="text-[var(--color-ink-500)] mt-1">Egy pozícióra</p>
         </div>
-      ))}
-    </div>
-
-    <!-- ROI Box -->
-    <div class="mt-12 bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-200 max-w-3xl mx-auto">
-      <div class="flex items-start gap-4">
-        <div class="text-4xl">💡</div>
-        <div>
-          <h4 class="text-xl font-bold text-slate-800 mb-3">Mennyit ér az időd?</h4>
-          <div class="space-y-2 text-slate-600">
-            <p>Ha egy HR-es bért fizetnél (nettó 400K/hó) → <strong>évente 4,8M Ft</strong></p>
-            <p>AI agent: évente <strong>~2,5M Ft</strong> (setup + 12 hó retainer)</p>
-            <p class="text-green-700 font-bold text-lg">Megtakarítás: ~2,3M Ft/év + te is jobban fókuszálhatsz az üzletre.</p>
+        
+        <div class="mb-8 pb-8 border-b border-[var(--color-ink-100)]">
+          <div class="mb-4">
+            <span class="text-sm text-[var(--color-ink-500)]">Setup</span>
+            <p class="text-2xl font-semibold text-[var(--color-ink-900)]">400 000 Ft</p>
+          </div>
+          <div>
+            <span class="text-sm text-[var(--color-ink-500)]">Havonta</span>
+            <p class="text-3xl font-semibold text-[var(--color-brand-600)]">180 000 Ft</p>
           </div>
         </div>
+        
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3 text-[var(--color-ink-700)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-500)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            1 aktív pozíció kezelése
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-700)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-500)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            CV szűrés, shortlist
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-700)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-500)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Előszűrő chat
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-700)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-500)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Interjú időpont foglalás
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-700)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-500)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Max. 50 jelentkező/hó
+          </li>
+        </ul>
+        
+        <a href="#beszeljunk" class="btn-secondary w-full justify-center">
+          Beszéljünk róla
+        </a>
+      </div>
+      
+      <!-- Pro -->
+      <div class="bg-[var(--color-ink-950)] p-8 rounded-2xl relative">
+        <div class="absolute -top-3 right-8 bg-[var(--color-brand-500)] text-white text-sm px-4 py-1 rounded-full font-medium">
+          Több pozíció
+        </div>
+        
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold text-white">Pro</h3>
+          <p class="text-[var(--color-ink-400)] mt-1">Komolyabb toborzási volumen</p>
+        </div>
+        
+        <div class="mb-8 pb-8 border-b border-[var(--color-ink-800)]">
+          <div class="mb-4">
+            <span class="text-sm text-[var(--color-ink-400)]">Setup</span>
+            <p class="text-2xl font-semibold text-white">700 000 Ft</p>
+          </div>
+          <div>
+            <span class="text-sm text-[var(--color-ink-400)]">Havonta</span>
+            <p class="text-3xl font-semibold text-[var(--color-brand-400)]">350 000 Ft</p>
+          </div>
+        </div>
+        
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3 text-[var(--color-ink-300)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-400)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            3 aktív pozíció párhuzamosan
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-300)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-400)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            LinkedIn integráció
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-300)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-400)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            ATS integráció (ha van)
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-300)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-400)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Max. 150 jelentkező/hó
+          </li>
+          <li class="flex items-start gap-3 text-[var(--color-ink-300)]">
+            <svg class="w-5 h-5 text-[var(--color-brand-400)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Prioritás support
+          </li>
+        </ul>
+        
+        <a href="#beszeljunk" class="btn-primary w-full justify-center !bg-[var(--color-brand-500)] hover:!bg-[var(--color-brand-600)]">
+          Beszéljünk róla
+        </a>
       </div>
     </div>
-
-    <div class="text-center mt-10">
-      <Link
-        href="#konzultacio"
-        class="inline-flex gap-2 items-center justify-center !bg-green-600 hover:!bg-green-700 !border-green-600"
-        size="lg">
-        Ingyenes Konzultáció — Kiszámoljuk az egyedi ROI-dat
-      </Link>
+    
+    <!-- ROI calculation -->
+    <div class="mt-12 bg-white p-8 rounded-2xl border border-[var(--color-ink-200)]">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="text-sm text-[var(--color-ink-500)] mb-2">HR-es bér évente</p>
+          <p class="text-2xl font-semibold text-[var(--color-ink-900)]">~5M Ft</p>
+          <p class="text-sm text-[var(--color-ink-400)]">(bruttó 400K/hó)</p>
+        </div>
+        <div>
+          <p class="text-sm text-[var(--color-ink-500)] mb-2">AI agent évente</p>
+          <p class="text-2xl font-semibold text-[var(--color-brand-600)]">~2.5M Ft</p>
+          <p class="text-sm text-[var(--color-ink-400)]">(setup + 12 hó)</p>
+        </div>
+        <div>
+          <p class="text-sm text-[var(--color-ink-500)] mb-2">Marad az asztalon</p>
+          <p class="text-2xl font-semibold text-[var(--color-ink-900)]">~2.5M Ft</p>
+          <p class="text-sm text-[var(--color-ink-400)]">(és a te időd)</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

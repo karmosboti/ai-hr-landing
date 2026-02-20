@@ -1,48 +1,56 @@
 ---
 const faqs = [
   {
-    question: "Cserélhető lesz az emberi HR-es?",
-    answer: "Nem. Az AI a repetitív részeket veszi le a válladról (CV szűrés, időpont egyeztetés). A döntést (kit veszünk fel) továbbra is te hozod meg."
+    question: "Ez kiváltja a HR-est?",
+    answer: "Nem. Az AI a repetitív munkát csinálja: CV olvasás, email írás, időpont egyeztetés. A döntést, hogy kit veszel fel, te hozod meg. Az AI nem látja, ki passzol a csapatba, csak azt, ki felel meg a papíron."
   },
   {
-    question: "GDPR-kompatibilis?",
-    answer: "Igen. Az AI agent az általad jóváhagyott szabályok szerint kezeli az adatokat. Minden jelölt hozzájárul az adatkezeléshez."
+    question: "Mi van az adatvédelemmel?",
+    answer: "GDPR-kompatibilis. A jelöltek beleegyeznek az adatkezelésbe. Az adatok EU-s szervereken maradnak. Kérésre töröljük."
+  },
+  {
+    question: "Milyen rendszerekkel működik?",
+    answer: "Google Calendar, Google Sheets, Notion, Airtable. Ha van meglévő ATS-ed (Recruitee, Greenhouse, stb.), azt is bekötjük a Pro csomagban. Emailekhez Gmail vagy bármi, ami IMAP-ot tud."
+  },
+  {
+    question: "Mennyi idő a beállítás?",
+    answer: "Kb. egy hét. Fél óra a te részedről (konzultáció), a többit mi csináljuk. Utána tesztelünk, és mehet."
   },
   {
     question: "Mi van, ha nem tetszik?",
-    answer: "Az első hónapban bármikor kiléphetsz, visszaadjuk a setup díj 50%-át."
+    answer: "Az első hónapban kiléphetsz, visszaadjuk a setup díj felét. Ha utána lépsz ki, csak a havidíj áll le, nincs hosszú távú szerződés."
   },
   {
-    question: "Milyen ATS rendszerekkel működik?",
-    answer: "Google Sheets, Notion, Airtable, vagy email alapú folyamat. Ha van meglévő ATS-ed, integráljuk (PRO csomag)."
-  },
-  {
-    question: "Mennyi idő alatt indul?",
-    answer: "1 hét setup → utána azonnal használható."
+    question: "Érti a magyar nyelvet?",
+    answer: "Igen. Magyar CV-ket olvas, magyarul ír emailt, magyarul chatel a jelöltekkel."
   }
 ];
 ---
 
-<section class="py-16 md:py-24 bg-slate-50" id="gyik">
+<section class="py-20 md:py-28 bg-white" id="kerdesek">
   <div class="max-w-3xl mx-auto px-5">
     <div class="text-center mb-12">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-        Gyakori kérdések
+      <p class="section-label mb-4">Kérdések</p>
+      <h2 class="text-3xl md:text-4xl text-[var(--color-ink-950)]">
+        Amit általában kérdeznek
       </h2>
     </div>
-
+    
     <div class="space-y-4">
-      {faqs.map((faq, index) => (
-        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+      {faqs.map((faq) => (
+        <details class="group bg-[var(--color-brand-50)] rounded-xl border border-transparent hover:border-[var(--color-brand-200)] transition-colors">
           <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-            <span class="text-lg font-semibold text-slate-800 flex items-center gap-3">
-              <span class="text-green-600">❓</span>
+            <span class="text-lg font-medium text-[var(--color-ink-900)] pr-4">
               {faq.question}
             </span>
-            <span class="text-2xl text-slate-400 group-open:rotate-45 transition-transform">+</span>
+            <span class="w-8 h-8 rounded-full bg-white border border-[var(--color-ink-200)] flex items-center justify-center shrink-0 group-open:bg-[var(--color-brand-600)] group-open:border-[var(--color-brand-600)] transition-colors">
+              <svg class="w-4 h-4 text-[var(--color-ink-500)] group-open:text-white group-open:rotate-45 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </span>
           </summary>
-          <div class="px-6 pb-6 pt-0 text-slate-600 border-t border-slate-100">
-            <p class="pt-4">{faq.answer}</p>
+          <div class="px-6 pb-6 text-[var(--color-ink-600)] leading-relaxed">
+            {faq.answer}
           </div>
         </details>
       ))}

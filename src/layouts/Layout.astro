@@ -2,8 +2,8 @@
 import { SEO } from "astro-seo";
 import Footer from "@/components/footer.astro";
 import Navbar from "@/components/navbar/navbar.astro";
-import "@fontsource-variable/inter/index.css";
-import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource-variable/dm-sans";
+import "@fontsource-variable/fraunces";
 import "../styles/global.css";
 
 export interface Props {
@@ -21,7 +21,7 @@ const { title } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "AI HR Agent"
-  : "AI HR Agent — Automatizáld a Toborzást | KKV-knak";
+  : "AI HR Agent — A toborzás nehéz részét rád bízzuk. Az unalmas részét ránk.";
 ---
 
 <!doctype html>
@@ -34,7 +34,7 @@ const makeTitle = title
 
     <SEO
       title={makeTitle}
-      description="KKV-knak AI-alapú HR munkatárs. CV szűrés, interjú időpontok, jelölt-követés — 24/7. Automatizáld a toborzás repetitív részeit."
+      description="CV szűrés, email válaszok, interjú időpontok. Az AI agent elvégzi helyetted. Te csak döntesz, kit veszel fel."
       canonical={canonicalURL}
       twitter={{
         creator: "@aihr_agent",
@@ -45,16 +45,16 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `AI HR Agent — Automatizáld a Toborzást`,
+          title: `AI HR Agent — Toborzás, kevesebb fejfájással`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "AI HR Agent - Toborzás Automatizálás",
+          alt: "AI HR Agent",
         },
       }}
     />
   </head>
-  <body>
+  <body class="noise-bg">
     <Navbar />
     <slot />
     <Footer />

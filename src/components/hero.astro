@@ -1,35 +1,60 @@
 ---
-import Link from "@/components/ui/link.astro";
-import { Icon } from "astro-icon/components";
 ---
 
-<main class="grid lg:grid-cols-1 place-items-center pt-16 pb-8 md:pt-20 md:pb-24">
-  <div class="text-center max-w-4xl mx-auto">
-    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Toborzol, de nincs időd rá?
-      <span class="text-green-600">Az AI HR Munkatársad átvállalja.</span>
-    </h1>
-    <p class="text-lg md:text-xl mt-6 text-slate-600 max-w-3xl mx-auto">
-      Automatizáld a CV szűrést, az előszűrő interjúkat és a jelölt-követést.
-      <br class="hidden md:block" />
-      Dedikált AI agent, ami érti a magyar munkaerőpiacot.
-    </p>
-    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <Link
-        href="#konzultacio"
-        class="flex gap-2 items-center justify-center !bg-green-600 hover:!bg-green-700 !border-green-600"
-        size="lg">
-        <Icon class="text-white w-5 h-5" name="bx:bx-calendar" />
-        Ingyenes Konzultáció Foglalás
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        href="#hogyan-mukodik"
-        class="flex gap-2 items-center justify-center">
-        <Icon class="text-black w-5 h-5" name="bx:bx-play-circle" />
-        Nézd meg működés közben
-      </Link>
+<main class="pt-12 pb-20 md:pt-20 md:pb-32">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Left column: Main content -->
+      <div class="lg:col-span-7">
+        <div class="accent-bar mb-8"></div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[var(--color-ink-950)]">
+          Heti 15 óra CV-olvasás helyett<br/>
+          <span class="text-[var(--color-brand-600)]">1 óra döntéshozatal</span>
+        </h1>
+        
+        <p class="mt-8 text-lg md:text-xl text-[var(--color-ink-600)] max-w-xl leading-relaxed">
+          Az AI HR agent elvégzi a toborzás unalmas részét. CV szűrés, email 
+          ping-pong, interjú időpontok. Te csak azzal foglalkozol, amihez ember kell: 
+          eldönteni, ki passzol a csapatba.
+        </p>
+        
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="#beszeljunk" class="btn-primary">
+            Beszéljünk 30 percet
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#mit-csinal" class="btn-secondary">
+            Megnézem, mit csinál
+          </a>
+        </div>
+      </div>
+      
+      <!-- Right column: Stats/proof -->
+      <div class="lg:col-span-5">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-[var(--color-ink-100)]">
+          <p class="section-label mb-6">Számok, nem ígéretek</p>
+          
+          <div class="space-y-6">
+            <div class="pb-6 border-b border-[var(--color-ink-100)]">
+              <p class="text-4xl md:text-5xl font-[var(--font-display)] text-[var(--color-ink-950)]">10-15</p>
+              <p class="text-[var(--color-ink-500)] mt-1">óra/hét toborzással (most)</p>
+            </div>
+            
+            <div class="pb-6 border-b border-[var(--color-ink-100)]">
+              <p class="text-4xl md:text-5xl font-[var(--font-display)] text-[var(--color-brand-600)]">1-2</p>
+              <p class="text-[var(--color-ink-500)] mt-1">óra/hét toborzással (utána)</p>
+            </div>
+            
+            <div>
+              <p class="text-4xl md:text-5xl font-[var(--font-display)] text-[var(--color-ink-950)]">24h</p>
+              <p class="text-[var(--color-ink-500)] mt-1">válaszidő minden jelöltnek</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </main>

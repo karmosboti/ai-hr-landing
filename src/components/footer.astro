@@ -2,16 +2,18 @@
 import Container from "@/components/container.astro";
 ---
 
-<footer class="border-t border-slate-200 mt-20">
+<footer class="border-t border-[var(--color-ink-200)] mt-0 bg-white">
   <Container>
-    <div class="py-10 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center gap-2">
-        <span class="bg-green-600 text-white px-2 py-1 rounded font-bold text-sm">AI</span>
-        <span class="font-bold text-slate-800">HR Agent</span>
+    <div class="py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-[var(--color-brand-600)] rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-lg font-[var(--font-display)]">hr</span>
+        </div>
+        <span class="font-semibold text-[var(--color-ink-900)]">AI HR Agent</span>
       </div>
-      <div class="text-slate-500 text-sm text-center md:text-right">
-        <p>© {new Date().getFullYear()} AI HR Agent. Minden jog fenntartva.</p>
-        <p class="mt-1">KKV-knak AI-alapú HR munkatárs 24/7</p>
+      
+      <div class="text-[var(--color-ink-500)] text-sm text-center md:text-right">
+        <p>© {new Date().getFullYear()} AI HR Agent</p>
       </div>
     </div>
   </Container>
